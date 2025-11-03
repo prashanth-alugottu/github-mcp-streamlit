@@ -1,16 +1,21 @@
 import asyncio
-from dotenv import load_dotenv
-load_dotenv()
-
+import streamlit as st
 import os
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+    DESKTOP_PATH = os.getenv("DESKTOP_PATH", r"C:\Users\Prashanth\Desktop")
+except:
+    if "OPENAI_API_KEY" in st.secrets:
+        os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+        GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-DESKTOP_PATH = os.getenv("DESKTOP_PATH", r"C:\Users\Prashanth\Desktop")
 
 async def run_agent_async(user_query: str) -> str:
     """
