@@ -41,15 +41,6 @@ async def run_agent_async(user_query: str) -> str:
                     "GITHUB_PERSONAL_ACCESS_TOKEN": GITHUB_TOKEN
                 },
                 "transport": "stdio"
-            },
-            "filesystem": {
-                "command": "npx",
-                "args": [
-                    "-y",
-                    "@modelcontextprotocol/server-filesystem",
-                    DESKTOP_PATH
-                ],
-                "transport": "stdio"
             }
         }
     )
