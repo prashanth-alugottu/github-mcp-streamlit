@@ -21,7 +21,7 @@ st.markdown("""
 
 st.title("🤖 MCP AI Agent - GitHub")
 st.markdown(
-    "<small>Use this tool to connect, explore, and manage GitHub repositories or local files seamlessly through MCP servers.</small>",
+    "<small>This project make actions on the my own github.</small>",
     unsafe_allow_html=True
 )
 st.markdown("---")
