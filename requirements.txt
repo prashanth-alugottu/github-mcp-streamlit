@@ -1,8 +1,6 @@
-langchain[openai]
+streamlit
 python-dotenv
 langgraph
-langchain_mcp_adapters
-fastmcp
-mcp
-streamlit
+langchain
 langchain-openai
+langchain-mcp-adapters
